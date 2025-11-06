@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Devine Empire Logo</title>
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --gold: #c6a059;
+        --charcoal: #484848;
+        --background: #f5f5f5;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: radial-gradient(circle at top, rgba(255, 255, 255, 0.8), var(--background));
+        color: var(--gold);
+      }
+
+      .logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+        text-align: center;
+      }
+
+      .logo__script {
+        font-family: "Great Vibes", cursive;
+        font-size: clamp(3rem, 6vw, 4.5rem);
+        font-weight: 400;
+        letter-spacing: 0.08em;
+        color: var(--gold);
+        position: relative;
+      }
+
+      .logo__script::after {
+        content: "";
+        position: absolute;
+        left: 10%;
+        bottom: -1.2rem;
+        width: 80%;
+        height: 0.35rem;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.65), var(--gold));
+        border-radius: 999px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+      }
+
+      .logo__flash {
+        position: relative;
+        width: clamp(8rem, 35vw, 18rem);
+        height: 0.75rem;
+        margin-top: 0.25rem;
+      }
+
+      .logo__flash::before,
+      .logo__flash::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        height: 100%;
+        background: var(--gold);
+      }
+
+      .logo__flash::before {
+        left: 0;
+        width: 62%;
+        clip-path: polygon(0 0, 100% 0, 82% 100%, 0% 100%);
+      }
+
+      .logo__flash::after {
+        right: 0;
+        width: 48%;
+        clip-path: polygon(36% 0, 100% 0, 100% 100%, 0 100%);
+        transform: translateX(-12%);
+      }
+
+      .logo__flash span {
+        position: absolute;
+        top: -0.65rem;
+        left: 45%;
+        width: 1.75rem;
+        height: 1.8rem;
+        background: var(--gold);
+        clip-path: polygon(40% 0, 100% 0, 58% 60%, 100% 60%, 10% 100%, 40% 60%, 0 60%);
+      }
+
+      .logo__empire {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.45em;
+        font-size: clamp(1.1rem, 2.6vw, 1.5rem);
+        color: var(--charcoal);
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 480px) {
+        body {
+          padding: 2rem 1rem;
+        }
+
+        .logo {
+          gap: 1.5rem;
+        }
+
+        .logo__script::after {
+          bottom: -1.5rem;
+        }
+
+        .logo__flash span {
+          top: -0.55rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="logo" aria-label="Devine Empire logo">
+      <div class="logo__script">Devine</div>
+      <div class="logo__flash" aria-hidden="true">
+        <span></span>
+      </div>
+      <div class="logo__empire">Empire</div>
+    </div>
+  </body>
+</html>
